@@ -1,0 +1,7 @@
+* text=auto
+
+# Explicitly declare text files we want to always be normalized:
+*.java text diff=java
+*.xml text
+*.properties text
+

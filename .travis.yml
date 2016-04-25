@@ -5,9 +5,7 @@ jdk:
 env:
   global:
     - SONATYPE_USERNAME=culturegraph
-    - secure: "MHD7Pu9itlb4SHcf1PUkJIG3kdUEA7ZWMIFyotFNnI+FfatTsZahTN4/HBXx+99d+YLijzm9psSItLh35RPSau8GfW0fQQYSNrv9jGiDug/3boi2FB1XASNONs+wW6RGwZtv+ayvqMxXZ7y/LIXuHcPN1hcm504aAe3MwSmMUV8="
-
-
+    - secure: "DC5Z0hph5gzs3RFcKZY+HiRsoHFYB/gdPpMvbi2b0RjzkqIcc1AU/PMztgOVU6ySdEOro4mZqT9hmIrdRmHCTpf6B6nDw/8+SjGqos2620uetmQj9RQxtTHErePc4ZAEWYyZAFfIs9fN9pmgyv0H436Bp56QtdTwWcCAiKNsn8u8iZG8/bqXUdHdRBnahui8N/zsx8ztPRGrJscUUgtomXWJAmHD+nInODgaFU9tR1zzxbJVF2t2mr7oRRoXsASxDtZo7Q+YGx2yv7tuahjlfhljTMvcEwWRpIBq52rjP+/79whSzC2CAOcWjy1Gi0t+sko083+5oJOIqGaig/zspH1oH6lqSJq1EgbKv5rIQkZAneknBAeG104KANn0y8pUcguMr3PI5Z2dftoTBvRco5LsB1F8MtPbGQhBCmapiJ40EASDBOR0DDhbVE4NU3Qp+1VM3LzSfx2MHroiFeVrIRaSKuSg92VHEyUvatWmh6+QIkntRS0R263hQWlIfcXEeMMC+oaR63706YalmoE62A+hcq92NM/xbuI6jc9ccOmHv/WZcrjv/A6aPjt8c8wUu6ZRyNJgmnk1XQ9XCKjgGpDHr39a7sKtMaCOsDOAuJRtBC+NzKh6bbBRWbK3X48byfetaeFkcvIPOPYsZKXQSdCUS7joqigodYI0jQ/hMkA="
 
 after_success:
   - "[[ $TRAVIS_BRANCH == \"master\" ]] && { python travis-ci/configure-mvn.py ; mvn clean deploy --settings ~/.m2/mySettings.xml -Dgpg.skip=true -Psonatype-oss-release ; }"

@@ -10,7 +10,7 @@
 
     <groupId>org.culturegraph</groupId>
     <artifactId>metafacture-fluently</artifactId>
-    <version>1.0.0-experimental</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <name>Metafacture Fluently</name>
     <description>Fluent API for constructing and executing Metafacture flows</description>

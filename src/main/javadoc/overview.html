@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Metafacture Fluently</title>
+</head>
+<body>
+	An experimental API for building complex Metafacture flows using a fluent
+	syntax.
+	<p>
+	A simple example:
+	<pre>{@code
+		Flux.process("input-file")
+			.with(flowWith(module(new FileOpener()))
+				.followedBy(module(new RecordReader()))
+				.followedBy(module(new PicaDecoder()))
+				.followedBy(module(new Filter("elastic/filter.xml")))
+				.followedBy(module(new Metamorph("elastic/record-morph.xml")))
+				.followedBy(module(new JsonEncoder()))
+				.followedBy(module(new JsonToElasticsearchBulk("id", "record", "picalytics")))
+				.followedBy(module(new NewLineAdder()))
+				.followedBy(terminatingModule(new ObjectWriter<>())))
+			.run();
+	}</pre>
+</body>
+</html>
